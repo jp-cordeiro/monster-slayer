@@ -1,0 +1,17 @@
+/*Geral*/
+
+html{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+}
+
+#app{
+    display: flex;
+    flex-direction: column;
+}
+
+.panel{
+    margin: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 1rem rgba(0,0,0,.15);
+}
