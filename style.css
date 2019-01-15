@@ -2,7 +2,6 @@
 
 html{
     font-family: 'Roboto', sans-serif;
-    font-size: 1.5rem;
 }
 
 #app{
@@ -14,4 +13,57 @@ html{
     margin: 1rem;
     padding: 1.5rem;
     box-shadow: 0 2px 1rem rgba(0,0,0,.15);
+}
+
+/*Área dos pontos*/
+.scores{
+    display: flex;
+}
+
+.score{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.score h1{
+    font-weight: 300;
+    font-size: 1.5rem;
+}
+
+.life-bar{
+    width: 80%;
+    height: 1.5rem;
+    border: 1px solid #AAA;
+}
+
+.life-bar .life{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    background: green;
+}
+.life-bar .danger{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    background: red;
+}
+
+/*Área do Resultado*/
+.result{
+    display: flex;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.result .win{
+    color: green;
+}
+
+.result .lose{
+    color: red;
 }
