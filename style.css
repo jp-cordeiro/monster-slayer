@@ -15,6 +15,12 @@ html{
     box-shadow: 0 2px 1rem rgba(0,0,0,.15);
 }
 
+.inventory{
+    display: block;
+    font-size: .8rem;
+    font-weight: 300;
+}
+
 /*Área dos pontos*/
 .scores{
     display: flex;
@@ -31,6 +37,11 @@ html{
 .score h1{
     font-weight: 300;
     font-size: 1.5rem;
+}
+
+.score h2{
+    font-weight: 200;
+    font-size: .8rem;
 }
 
 .life-bar{
@@ -66,4 +77,74 @@ html{
 
 .result .lose{
     color: red;
+}
+
+/*Área dos botões*/
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.btn{
+    padding: .5rem 1rem;
+    margin: 0 1rem;
+    border-radius: .5rem;
+    text-transform: uppercase;
+    font-size: 1rem;
+}
+
+.new-game{
+    background-color: #4253af;
+    color: #fff;
+}
+
+.attack{
+    background-color: #e51c23;
+    color: #fff;
+}
+
+.special-attack{
+    background-color: #ff9800;
+    color: #000;
+}
+
+.heal{
+    background-color: #259b24;
+    color: #fff;
+}
+
+.give-up{
+    background-color: #bbb;
+    color: #000;
+}
+
+/*Área dos logs*/
+.logs ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.logs ul li{
+    display: flex;
+    justify-content: center;
+    margin: .4rem 0;
+    padding: .3rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: .3rem;
+}
+
+.player{
+    background-color: #4253afaa;
+    color: #fff;
+}
+
+.monster{
+
+    background-color: #e51c23aa;
+    color: #fff;
 }

@@ -9,9 +9,14 @@
 </head>
 <body>
 <div id="app">
+    <span class="inventory">
+        Ataques Especiais: {{specials}} - Potions : {{potions}}
+    </span>
     <div class="panel scores">
         <div class="score">
-            <h1>Jogador</h1>
+            <span>
+                <h1>Jogador <span v-show="player.class"> - {{player.class}}</span></h1>
+            </span>
             <div class="life-bar">
                 <div class="life"
                      :class="{danger: playerLife < 20}"
@@ -39,8 +44,34 @@
         <div v-if="monsterLife == 0" class="win">Você ganhou! :D</div>
         <div v-if="playerLife == 0" class="lose">Você perdeu! T.T</div>
     </div>
-    <div class="panel buttons"></div>
-    <div class="panel logs"></div>
+
+    <div class="panel buttons">
+        <!--Start Game-->
+        <button class="btn new-game" v-if="!running" @click="newGame()">Iniciar Jogo</button>
+        <!--Choose Class-->
+        <template v-else-if="running && classPanel">
+            <button class="btn attack" @click="chooseClass('GUERREIRO')">Guerreio</button>
+            <button class="btn special-attack" @click="chooseClass('MAGO')">Mago</button>
+            <button class="btn heal" @click="chooseClass('RANGER')">Ranger</button>
+            <button class="btn give-up" @click="chooseClass('LADINO')">Ladino</button>
+        </template>
+        <!--Battle-->
+        <template v-else>
+            <button class="btn attack" @click="attack(false)">Ataque</button>
+            <button class="btn special-attack" v-if="specials > 0" @click="attack(true)">{{player.specialAttack}}</button>
+            <button class="btn heal" v-if="potions > 0" @click="healAndHurt()">Curar</button>
+            <button class="btn give-up" @click="giveUp()">Desistir</button>
+        </template>
+    </div>
+    <div v-if="logs.length" class="panel logs">
+        <ul>
+            <li v-for="log in logs"
+                class="log"
+                :class="log.cls">
+                {{log.text}}
+            </li>
+        </ul>
+    </div>
 </div>
 
 <script src="app.js"></script>
